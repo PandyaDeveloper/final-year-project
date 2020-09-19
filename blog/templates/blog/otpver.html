@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="{% static '/css/style.css' %}" rel="stylesheet" type="text/css" media="all">
+    <script src="https://kit.fontawesome.com/2e3157dcca.js" crossorigin="anonymous"></script>
+</head>
+<body bgcolor="#FFDEAD">
+    <div class="login-box3">
+            <h1>OTP</h1>
+            <form method="POST" action="{% url 'vtp' %}">
+            {% csrf_token %}
+            <div class="textbox">
+                <i class='fas fa-user-check' style='color:yellow'></i>
+                <input type="number" placeholder="Enter OTP" name="tp">
+            </div>
+            <input class="btn4"type="submit" value="Verfiy">
+        </form>
+    </div>
+</body>
+</html>

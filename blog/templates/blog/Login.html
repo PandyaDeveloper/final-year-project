@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="{% static '/css/style.css' %}" rel="stylesheet" type="text/css" media="all">
+</head>
+<body class="body1">
+    <div class="login-box">
+            <h1>Login</h1>
+            <form method="POST" action="{% url 'vlog' %}">
+            {% csrf_token %}
+            <div class="textbox">
+                <i class="fa fa-users" aria-hidden="true"></i>
+                <input type="email" placeholder="Email ID" name="eml">
+            </div>
+            <div class="textbox">
+                <i class="fa fa-key" aria-hidden="true"></i>
+                <input type="password" placeholder="Password" name="pasw">
+            </div>
+            <div class="lollink">
+                <a href="" class="r">Forgot Password?</a>
+            </div>
+            <input class="btn"type="submit" value="Login">
+            <a href="{% url 'reg' %}"><button class="btn2" type="button">Register</button></a>
+        </form>
+    </div>
+</body>
+</html>

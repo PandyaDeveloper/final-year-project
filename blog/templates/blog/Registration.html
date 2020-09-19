@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="{% static '/css/style.css' %}" rel="stylesheet" type="text/css" media="all">
+    <script src="https://kit.fontawesome.com/2e3157dcca.js" crossorigin="anonymous"></script>
+</head>
+<body class="body1">
+    <div class="login-box">
+            <h1>Registration</h1>
+            <form method="POST" action="{% url 'regis' %}">
+            {% csrf_token %}
+            <div class="textbox2">
+                <i class="fas fa-inbox"></i>
+                <input type="email" placeholder="Email ID" name="ema">
+            </div>
+            <div class="textbox2">
+                <i class="fas fa-user"></i>
+                <input type="text" placeholder="Enter Your Name" name="nam">
+            </div>
+            <div class="textbox2">
+                <i class="fas fa-key"></i>
+                <input type="password" placeholder="Enter Password" name="pass">
+            </div>
+            <div class="textbox2">
+                <i class="fas fa-lock"></i>
+                <input type="password" placeholder="Re-enter Password" name="cpass">
+            </div>
+            <div class="textbox2">
+                <i class="fas fa-child"></i>
+                <input type="number" placeholder="Enter Your Age" name="age">
+            </div>
+            <div class="w">
+                <input class="f" type="radio" value="Male" name="gender">Male
+                <input class="f" type="radio" value="female" name="gender">Female
+            </div>
+            <div class="textbox2">
+                <i class="fas fa-num"></i>
+                <input type="number" placeholder="Enter Your Number" name="num">
+            </div>
+            <div class="lollink2">
+                <a href="{% url 'login' %}" class="r2">Already have account?</a>
+            </div>
+            <input class="btn4"type="submit" value="Register">
+        </form>
+    </div>
+</body>
+</html>

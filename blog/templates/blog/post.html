@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post</title>
+    <link href="{% static '/css/style.css' %}" rel="stylesheet" type="text/css" media="all">
+    <script src="https://kit.fontawesome.com/2e3157dcca.js" crossorigin="anonymous"></script>
+</head>
+<body bgcolor="black">
+    <div>
+        <a href="{% url 'c' %}" class="btn5 btn-primary apply-btn">Create Post</a>
+    </div>
+    <div class="divTable steelBlueCols">
+        <div class="divTableHeading">
+            <div class="divTableRow">
+                <div class="divTableHead">User</div>
+                <div class="divTableHead">Title</div>
+                <div class="divTableHead">Detail</div>
+                <div class="divTableHead">Sentiment</div>
+            </div>
+        </div>
+        <div class="divTableBody">
+            {% if key1 %}
+                {% for u in key1 %}
+                    <div class="divTableRow">
+                        <div class="divTableCell">{{ u.pus.Email }}</div>
+                        <div class="divTableCell">{{ u.pti }}</div>
+                        <div class="divTableCell">{{ u.pde }}</div>
+                        {% if u.sen == "4" %}
+                            <div class="divTableCell">Positive</div>
+                        {% endif %}
+                        {% if u.sen == "3" %}
+                            <div class="divTableCell">Somewhat Positive</div>
+                        {% endif %}
+                        {% if u.sen == "2" %}
+                            <div class="divTableCell">Netural</div>
+                        {% endif %}
+                        {% if u.sen == "1" %}
+                            <div class="divTableCell">Liked</div> <!-- Somewhat Negative -->
+                        {% endif %}
+                        {% if u.sen == "0" %}
+                            <div class="divTableCell">Not liked</div><!-- Totally negative or negative-->
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

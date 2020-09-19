@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Post</title>
+</head>
+<body>
+    <form action="{% url 'sen' %}" method="POST">
+        {% csrf_token %}
+        <td>
+            <tr>Title</tr>
+        </td>
+        <td>
+            <tr><input type="text" maxlength="100" name="ta" placeholder="Enter Title Here"></tr>
+        </td>
+        <td>
+            <tr><input type="text" name="dt"  height="100px" width="50%" placeholder="Enter Message Here"  ></tr>
+        </td>
+        <td>
+            <tr><input type="submit" value="Submit"></tr>
+        </td>
+    </form>
+</body>
+</html>
